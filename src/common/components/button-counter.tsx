@@ -1,14 +1,7 @@
 import { useState } from 'react';
 
-type ButtonCounterProps = {
-  label?: string;
-  initialCount?: number;
-};
-export const ButtonCounter = ({
-  initialCount = 0,
-  label = 'Count is',
-}: ButtonCounterProps) => {
-  const [count, setCount] = useState(initialCount);
+export const ButtonCounter = () => {
+  const [count, setCount] = useState(0);
 
   const increment = () => setCount(count + 1);
 
@@ -17,7 +10,7 @@ export const ButtonCounter = ({
       onClick={increment}
       className="text-3xl rounded bg-gray-100 border-2 p-3"
     >
-      {label} {count}
+      Count is {count}
     </button>
   );
 };
